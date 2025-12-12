@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_holdingsannual
+    description: "Staging view for bond holdings (annual)"
+    tests:
+      - not_null:
+          column_name: postcode
+  - name: stg_refundsquarterly
+    description: "Staging view for bond refunds (quarterly)"
+    tests:
+      - not_null:
+          column_name: year
+  - name: stg_lodgementsmonthly
+    description: "Staging view for bond lodgements (monthly)"
+    tests:
+      - not_null:
+          column_name: year

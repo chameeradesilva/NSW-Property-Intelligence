@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: nsw_bond
+    database: "AwsDataCatalog"        # <<-- use exactly this (or your Data Catalog name)
+    schema: "au-real-estate-db"       # <<-- REPLACE with your exact Glue DB name from Glue console
+    tables:
+      - name: holdingsannual       # Use exact table names Glue created (adjust if different)
+        description: "Bond holdings - annual"
+      - name: lodgementsmonthly
+        description: "Bond lodgements - monthly"
+      - name: refundsquarterly
+        description: "Bond refunds - quarterly"

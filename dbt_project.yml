@@ -1,0 +1,35 @@
+name: 'au_real_estate'
+version: '1.0.0'
+config-version: 2
+
+profile: 'default'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+vars:
+  s3_bucket: "au-real-estate"
+  s3_processed_prefix: "processed"
+  partition_key: "year"
+
+models:
+  au_real_estate:
+    +materialized: view
+
+    staging:
+      +materialized: view
+
+    marts:
+      +materialized: table
+
+      marts_core:
+        +materialized: table
