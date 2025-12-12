@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bulk_sales
+    # For Athena: database should be the Athena Data Catalog name (usually AwsDataCatalog)
+    database: "AwsDataCatalog"        # <<-- use exactly this (or your Data Catalog name)
+    schema: "au-real-estate-db"       # <<-- REPLACE with your exact Glue DB name from Glue console
+    tables:
+      - name: "bulk-salesnsw_bulk_sales"   # <<-- REPLACE with the exact Glue table name (check Glue)
+        description: "Athena/Glue table for NSW bulk property sales (parquet)"
